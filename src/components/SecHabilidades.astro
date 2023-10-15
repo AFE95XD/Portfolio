@@ -1,0 +1,132 @@
+---
+import IconAstro from "./svg/IconAstro.astro";
+import IconCss from "./svg/IconCss.astro";
+import IconGit from "./svg/IconGit.astro";
+import IconHtml from "./svg/IconHtml.astro";
+import IconJavascript from "./svg/IconJavascript.astro";
+import IconMongoDB from "./svg/IconMongodb.astro";
+import IconNext from "./svg/IconNext.astro";
+import IconNode from "./svg/IconNodejs.astro";
+import IconReact from "./svg/IconReact.astro";
+import IconTailwind from "./svg/IconTailwind.astro";
+import IconTypescript from "./svg/IconTypescript.astro";
+
+const iconosDev = [
+  IconHtml,
+  IconCss,
+  IconTailwind,
+  IconJavascript,
+  IconTypescript,
+  IconGit,
+  IconReact,
+  IconNext,
+  IconAstro,
+  IconNode,
+  IconMongoDB,
+];
+
+const NombresIconos = [
+  "Html",
+  "Css",
+  "Tailwind",
+  "Javascript",
+  "Typescript",
+  "Git",
+  "React",
+  "Next",
+  "Astro",
+  "Node",
+  "MongoDB",
+];
+---
+
+<section id="Habilidades">
+  <div class="titulo">
+    <h2>Habilidades</h2>
+  </div>
+  <!-- <div> -->
+  <div class="contenedor">
+    {
+      iconosDev.map((Icono, index) => (
+        <div class="icon-dev">
+          <Icono />
+          {NombresIconos[index]}
+        </div>
+      ))
+    }
+  </div>
+  <!-- </div> -->
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    row-gap: 1rem;
+    /* width: 100%; */
+  }
+
+  .titulo {
+    display: flex;
+    min-width: 736px;
+    padding: 1rem 0;
+  }
+
+  h2 {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-pacifico);
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #375a7f;
+      bottom: 0;
+      left: 0;
+      margin-bottom: -5px;
+    }
+  }
+
+  .contenedor {
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+    display: flex;
+    flex-wrap: wrap;
+    width: 736px;
+    justify-content: space-between;
+    row-gap: 1rem;
+  }
+
+  .icon-dev {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 125px;
+    height: 125px;
+    font-family: var(--font-josefin);
+    font-size: large;
+  }
+
+  @media (width < 768px) {
+    .titulo {
+      min-width: 85%;
+      justify-content: center;
+      padding: 1rem 2rem;
+    }
+
+    .contenedor {
+      width: 0;
+      min-width: 85%;
+    }
+  }
+</style>

@@ -1,0 +1,55 @@
+---
+import TimeLine from "./ui/TimeLine.astro";
+---
+
+<section id="Experiencia">
+  <div>
+    <h2>Experiencia</h2>
+  </div>
+  <TimeLine />
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    row-gap: 1rem;
+    /* width: 100%; */
+  }
+  div {
+    display: flex;
+    min-width: 736px;
+    padding: 1rem 0;
+  }
+
+  h2 {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-pacifico);
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #375a7f;
+      bottom: 0;
+      left: 0;
+      margin-bottom: -5px;
+    }
+  }
+
+  @media (width <= 768px) {
+    div {
+      min-width: 85%;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+  }
+</style>

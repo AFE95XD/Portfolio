@@ -1,0 +1,111 @@
+---
+import Card from "./ui/Card.astro";
+import imagenIMA from "../assets/img/img_imapower_plants.png";
+import imagenPB from "../assets/img/img_premiumbakes.png";
+import imagenGuitarLA from "../assets/img/img_guitarLA.png";
+
+const proyectosInfo = [
+  {
+    imagen: imagenIMA,
+    titulo: "IMA Powerplants",
+    descripcion:
+      "Sitio web de informacion sobreplantas de energia y mantenimiento industrial.",
+    tecnologias: ["html", "css", "tailwind", "javascript", "git", "react"],
+    infoProyecto: {
+      git: "https://github.com/AFE95XD/imapowerplants",
+      sitio: "https://imapowerplants.com/",
+    },
+  },
+  {
+    imagen: imagenPB,
+    titulo: "Premium Brakes",
+    descripcion:
+      "Sitio web de informacion y servicio de reparacion o mantenimiento de baltas.",
+    tecnologias: ["html", "css", "tailwind", "javascript", "git", "react"],
+    infoProyecto: {
+      git: "https://github.com/AFE95XD/WEB-BALATAS",
+      sitio: "https://premiumbrakes.netlify.app",
+    },
+  },
+  {
+    imagen: imagenGuitarLA,
+    titulo: "GuitarLA",
+    descripcion: "Sitio web de informacion sobre guitarras y tienda en linea.",
+    tecnologias: ["html", "css", "javascript", "git", "react", "next"],
+    infoProyecto: {
+      git: "https://github.com/AFE95XD/Proyecto-GuitarLA-nextjs",
+      sitio: "https://proyecto-guitar-la-nextjs.vercel.app",
+    },
+  },
+];
+---
+
+<section id="Proyectos">
+  <div class="titulo">
+    <h2>Proyectos</h2>
+  </div>
+  <div class="contenedor-proyectos">
+    {proyectosInfo.map((item) => <Card proyectoInfo={item} />)}
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    row-gap: 1rem;
+    /* width: 100%; */
+  }
+
+  .titulo {
+    display: flex;
+    min-width: 736px;
+    padding: 1rem 0;
+  }
+
+  h2 {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-pacifico);
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #375a7f;
+      bottom: 0;
+      left: 0;
+      margin-bottom: -5px;
+    }
+  }
+
+  .contenedor-proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 736px;
+    padding: 1rem 0;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @media (width < 768px) {
+    .titulo {
+      min-width: 85%;
+      justify-content: center;
+    }
+
+    .contenedor-proyectos {
+      width: 0;
+      min-width: 85%;
+      justify-content: center;
+    }
+  }
+</style>

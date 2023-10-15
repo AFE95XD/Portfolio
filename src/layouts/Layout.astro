@@ -1,0 +1,71 @@
+---
+import Header from "../components/Header.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Portafolio de Abraham Flores Espinosa" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
+</html>
+
+<script>
+  // Preferencia del sistema del usuario
+  const prefStorage = localStorage.getItem("theme");
+  const prefSystem = window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+
+  const theme = prefStorage ?? prefSystem;
+  document.body.classList.toggle(theme);
+</script>
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&family=Pacifico&display=swap");
+
+  *,
+  ::after,
+  ::before {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --font-pacifico: "Pacifico", cursive;
+    --font-josefin: "Josefin Sans", sans-serif;
+  }
+
+  body[class="light"] {
+    --bg-theme: #fdebf3;
+    --text-theme: #1e1e2e;
+    --bg-linear-gradiente: rgba(0, 0, 0, 0.2) 100%, transparent;
+    --bg-shadow: rgba(0, 0, 0, 0.5);
+  }
+
+  body[class="dark"] {
+    --bg-theme: #1e1e2e;
+    --text-theme: #fdebf3;
+    --bg-linear-gradiente: rgba(255, 255, 255, 0.8) 100%, transparent;
+    --bg-shadow: rgba(255, 255, 255, 0.5);
+  }
+
+  body {
+    background-color: var(--bg-theme);
+    color: var(--text-theme);
+    scroll-behavior: smooth;
+  }
+</style>
