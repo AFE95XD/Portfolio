@@ -1,6 +1,6 @@
 # 🧑‍🚀 Portfolio Personal
 
-Portfolio personal sensillo construido en el framework de javascript Astro, puedes ver el demo [aqui](https://portfolio-afe95xd.vercel.app/).
+Portfolio personal sensillo construido en el framework de javascript Astro, puedes ver el demo [aqui](https://portfolio-abraham-flores-espinosa.vercel.app/){:target="\_blank"}.
 
 ![just-the-basics](src/assets/img/img_portfolio.png)
 
@@ -26,7 +26,7 @@ npm install
 npm run dev
 ```
 
-## 🧞 Commands
+## 🧞 Comandos
 
 Los comandos que puedes ocupar en una terminal:
 
